@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<!-- Modern HTML document -->
+<html lang="en">
+<!-- Root element, English -->
+<head>
+  <!-- Page information -->
+  <meta charset="UTF-8">
+  <!-- Character encoding -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- Scale to the device width -->
+  <title>REPLACE: Your Name | Personal Page</title>
+  <!-- TODO: use your own name; this should match your Tuesday page -->
+  <link rel="stylesheet" href="styles.css">
+  <!-- Connects the stylesheet -->
+  <script src="script.js" defer></script>
+  <!-- Loads your JavaScript after the HTML is parsed -->
+</head>
+<!-- End of head -->
+<body>
+  <!-- Visible content -->
+  <header>
+    <!-- TODO: bring over your header from Tuesday -->
+    <h1>REPLACE: Your Name</h1>
+    <!-- Page heading -->
+    <button type="button" id="theme-button">Switch to dark mode</button>
+    <!-- Requirement 1: clicking this button toggles dark mode (see script.js) -->
+  </header>
+  <!-- End of header -->
+
+  <main>
+    <!-- Main content -->
+    <section id="interests">
+      <!-- Requirement 2: a list that the visitor can filter -->
+      <h2>My interests</h2>
+      <!-- Section heading -->
+      <label for="filter-input">Filter the list</label>
+      <!-- Label for the filter box -->
+      <input type="search" id="filter-input" placeholder="Type to filter">
+      <!-- Typing here filters the list below (see script.js) -->
+      <ul id="interest-list">
+        <!-- JavaScript fills this list from the interests array in script.js -->
+      </ul>
+      <!-- End of the list -->
+      <p id="interest-count"></p>
+      <!-- JavaScript writes how many items are showing -->
+    </section>
+    <!-- End of interests section -->
+
+    <section id="contact">
+      <!-- Requirement 3: a form whose result appears on the page -->
+      <h2>Send me a message</h2>
+      <!-- Section heading -->
+      <form id="message-form">
+        <!-- Form; JavaScript handles the submit event -->
+        <label for="sender-name">Your name</label>
+        <!-- Label for the name input -->
+        <input type="text" id="sender-name" required>
+        <!-- Name input -->
+        <label for="sender-message">Message</label>
+        <!-- Label for the message box -->
+        <textarea id="sender-message" rows="3" required></textarea>
+        <!-- Message box -->
+        <button type="submit">Send</button>
+        <!-- Submit button -->
+      </form>
+      <!-- End of form -->
+      <p id="form-summary"></p>
+      <!-- JavaScript writes a summary here after the form is submitted -->
+    </section>
+    <!-- End of contact section -->
+  </main>
+  <!-- End of main -->
+
+  <footer>
+    <!-- TODO: bring over your footer from Tuesday, including the link to your GitHub profile -->
+  </footer>
+  <!-- End of footer -->
+</body>
+<!-- End of body -->
+</html>
+<!-- End of document -->

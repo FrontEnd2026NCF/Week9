@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<!-- Modern HTML document -->
+<html lang="en">
+<!-- Root element, English -->
+<head>
+  <!-- Page information -->
+  <meta charset="UTF-8">
+  <!-- Character encoding -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- Scale to the device width -->
+  <title>Florida Housing Report Feedback</title>
+  <!-- Browser tab text -->
+</head>
+<!-- End of head -->
+<body>
+  <!-- Visible content -->
+  <h1>Feedback form</h1>
+  <!-- Page heading -->
+  <p>Tell us which city to add to the report next.</p>
+  <!-- Instruction paragraph -->
+
+  <form action="feedback_form.html" method="get">
+    <!-- action: where the data is sent (this same page). method="get": data goes into the URL -->
+
+    <p>
+      <!-- Each field sits in a paragraph so it appears on its own line -->
+      <label for="visitor-name">Your name</label><br>
+      <!-- label text; for="visitor-name" connects it to the input with that id -->
+      <input type="text" id="visitor-name" name="visitor_name" required>
+      <!-- Text box. id connects the label; name is the key sent to the server; required blocks empty submit -->
+    </p>
+
+    <p>
+      <!-- Next field -->
+      <label for="visitor-email">Email address</label><br>
+      <!-- Label for the email field -->
+      <input type="email" id="visitor-email" name="visitor_email" required>
+      <!-- type="email" makes the browser check for an @ sign -->
+    </p>
+
+    <p>
+      <!-- Next field -->
+      <label for="years">Years living in Florida</label><br>
+      <!-- Label for the number field -->
+      <input type="number" id="years" name="years" min="0" max="100" value="1">
+      <!-- Number input with limits; value is the starting value -->
+    </p>
+
+    <p>
+      <!-- Next field -->
+      <label for="visitor-role">I am a</label><br>
+      <!-- Label for the dropdown -->
+      <select id="visitor-role" name="visitor_role">
+        <!-- Dropdown menu; the chosen option's value is sent -->
+        <option value="student">Student</option>
+        <!-- Option 1 -->
+        <option value="homeowner">Homeowner</option>
+        <!-- Option 2 -->
+        <option value="renter">Renter</option>
+        <!-- Option 3 -->
+        <option value="other">Other</option>
+        <!-- Option 4 -->
+      </select>
+      <!-- End of dropdown -->
+    </p>
+
+    <fieldset>
+      <!-- Groups related controls -->
+      <legend>City to add next</legend>
+      <!-- Title for the group -->
+      <input type="radio" id="city-orlando" name="city" value="orlando" checked>
+      <!-- Radio button; all radios with the same name allow only one choice; checked is the default -->
+      <label for="city-orlando">Orlando</label><br>
+      <!-- Label for the radio -->
+      <input type="radio" id="city-jacksonville" name="city" value="jacksonville">
+      <!-- Radio button -->
+      <label for="city-jacksonville">Jacksonville</label><br>
+      <!-- Label for the radio -->
+      <input type="radio" id="city-sarasota" name="city" value="sarasota">
+      <!-- Radio button -->
+      <label for="city-sarasota">Sarasota</label>
+      <!-- Label for the radio -->
+    </fieldset>
+    <!-- End of group -->
+
+    <p>
+      <!-- Next field -->
+      <input type="checkbox" id="updates" name="updates" value="yes">
+      <!-- Checkbox: sent only when checked -->
+      <label for="updates">Email me when new data is added</label>
+      <!-- Label for the checkbox -->
+    </p>
+
+    <p>
+      <!-- Next field -->
+      <label for="comments">Comments</label><br>
+      <!-- Label for the text area -->
+      <textarea id="comments" name="comments" rows="4" cols="40"></textarea>
+      <!-- Multi-line text box; rows and cols set the starting size -->
+    </p>
+
+    <p>
+      <!-- Buttons -->
+      <button type="submit">Send feedback</button>
+      <!-- Submits the form -->
+      <button type="reset">Clear form</button>
+      <!-- Resets every field to its starting value -->
+    </p>
+  </form>
+  <!-- End of the form -->
+</body>
+<!-- End of body -->
+</html>
+<!-- End of document -->

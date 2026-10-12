@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<!-- Modern HTML document -->
+<html lang="en">
+<!-- Root element, English -->
+<head>
+  <!-- Page information -->
+  <meta charset="UTF-8">
+  <!-- Character encoding -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- Scale to the device width -->
+  <title>Florida Housing Explorer: Stage 2 (DOM)</title>
+  <!-- Browser tab text -->
+  <link rel="stylesheet" href="styles.css">
+  <!-- Connects the stylesheet -->
+  <script src="data.js" defer></script>
+  <!-- Loads the housing data array first -->
+  <script src="app.js" defer></script>
+  <!-- Loads the app code second; defer runs both after the HTML is parsed, in order -->
+</head>
+<!-- End of head -->
+<body>
+  <!-- Visible content -->
+  <header class="site-header">
+    <!-- Page header -->
+    <h1>Florida Housing Explorer</h1>
+    <!-- Main heading -->
+    <p>Case-Shiller home price index, Miami and Tampa compared with the United States.</p>
+    <!-- Summary sentence -->
+  </header>
+  <!-- End of header -->
+
+  <main class="content">
+    <!-- Main content -->
+    <section class="panel">
+      <!-- Latest values section -->
+      <h2>Latest values</h2>
+      <!-- Section heading -->
+      <p id="latest-label">Loading...</p>
+      <!-- Placeholder text; JavaScript replaces it with the month of the newest row -->
+      <div class="card-row">
+        <!-- Row of three cards -->
+        <article class="card">
+          <!-- Miami card -->
+          <h3>Miami</h3>
+          <!-- City name -->
+          <p class="value" id="latest-miami">-</p>
+          <!-- JavaScript fills in this value -->
+        </article>
+        <!-- End of card -->
+        <article class="card">
+          <!-- Tampa card -->
+          <h3>Tampa</h3>
+          <!-- City name -->
+          <p class="value" id="latest-tampa">-</p>
+          <!-- JavaScript fills in this value -->
+        </article>
+        <!-- End of card -->
+        <article class="card">
+          <!-- National card -->
+          <h3>United States</h3>
+          <!-- Name -->
+          <p class="value" id="latest-national">-</p>
+          <!-- JavaScript fills in this value -->
+        </article>
+        <!-- End of card -->
+      </div>
+      <!-- End of card row -->
+    </section>
+    <!-- End of latest values section -->
+
+    <section class="panel">
+      <!-- Table section -->
+      <h2>June index values by year</h2>
+      <!-- Section heading -->
+      <p id="row-count"></p>
+      <!-- JavaScript writes how many rows are shown -->
+      <table class="data-table">
+        <!-- Table -->
+        <caption>Case-Shiller home price index (seasonally adjusted)</caption>
+        <!-- Caption -->
+        <thead>
+          <!-- Header row -->
+          <tr>
+            <!-- Row -->
+            <th scope="col">Month</th>
+            <!-- Column heading -->
+            <th scope="col">Miami</th>
+            <!-- Column heading -->
+            <th scope="col">Tampa</th>
+            <!-- Column heading -->
+            <th scope="col">United States</th>
+            <!-- Column heading -->
+          </tr>
+          <!-- End of row -->
+        </thead>
+        <!-- End of header -->
+        <tbody id="table-body">
+          <!-- Body is empty on purpose; JavaScript creates the rows -->
+        </tbody>
+        <!-- End of body -->
+      </table>
+      <!-- End of table -->
+    </section>
+    <!-- End of table section -->
+  </main>
+  <!-- End of main -->
+</body>
+<!-- End of body -->
+</html>
+<!-- End of document -->

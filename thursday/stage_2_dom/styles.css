@@ -1,0 +1,106 @@
+/* Stylesheet for the Florida Housing Explorer (Stage 2) */
+
+:root {
+  --terracotta: #B85042;      /* accent color */
+  --offwhite: #FAF7F2;        /* page background */
+  --sage: #A7BEAE;            /* secondary color */
+  --sand: #E7E8D1;            /* panel background */
+  --ink: #2B2B2B;             /* text color */
+  --link: #8A3A2E;            /* link color with enough contrast on sand */
+}
+
+* {
+  box-sizing: border-box;     /* padding and border are included in widths */
+}
+
+body {
+  margin: 0;                  /* removes the default page margin */
+  font-family: Georgia, "Times New Roman", serif;  /* font stack */
+  font-size: 1.125rem;        /* 18px at the default root size */
+  line-height: 1.6;           /* comfortable line spacing */
+  color: var(--ink);          /* text color */
+  background-color: var(--offwhite);  /* page background */
+}
+
+.site-header {
+  background-color: var(--terracotta);  /* colored band */
+  color: var(--offwhite);     /* light text on the band */
+  padding: 1.5rem;            /* space inside the header */
+  text-align: center;         /* centers the text */
+}
+
+.site-header h1 {
+  margin: 0 0 0.25rem 0;      /* small gap under the heading only */
+  font-size: 2.25rem;         /* large heading */
+}
+
+.site-header p {
+  margin: 0;                  /* no extra space around the sentence */
+}
+
+.content {
+  max-width: 60rem;           /* limits the line length */
+  margin: 0 auto;             /* centers the content block */
+  padding: 1.5rem;            /* space inside main */
+}
+
+.panel {
+  background-color: var(--sand);       /* panel color */
+  border: 2px solid var(--sage);       /* panel border */
+  border-radius: 8px;                  /* rounded corners */
+  padding: 1.25rem;                    /* space inside the panel */
+  margin-bottom: 1.5rem;               /* space below each panel */
+}
+
+.card-row {
+  display: flex;              /* cards sit side by side */
+  flex-wrap: wrap;            /* cards wrap on narrow screens */
+  gap: 1rem;                  /* space between cards */
+}
+
+.card {
+  flex: 1 1 12rem;            /* cards share the row equally */
+  background-color: var(--offwhite);   /* card color */
+  border: 2px solid var(--sage);       /* card border */
+  border-radius: 8px;                  /* rounded corners */
+  padding: 1rem;                       /* space inside the card */
+}
+
+.card h3 {
+  margin: 0;                  /* no extra space around the city name */
+  color: var(--link);         /* accent color with good contrast */
+}
+
+.card .value {
+  margin: 0;                  /* no extra space */
+  font-size: 2rem;            /* large number */
+  font-weight: bold;          /* heavy weight */
+}
+
+.data-table {
+  width: 100%;                /* table fills the panel */
+  border-collapse: collapse;  /* merges cell borders */
+}
+
+.data-table th,
+.data-table td {
+  padding: 0.5rem 0.75rem;    /* space inside cells */
+  text-align: right;          /* numbers align on the right */
+  border-bottom: 1px solid var(--sage);  /* line under each row */
+}
+
+.data-table th:first-child,
+.data-table td:first-child {
+  text-align: left;           /* the month label aligns left */
+}
+
+.data-table th {
+  background-color: var(--sage);  /* header cell color */
+  color: var(--ink);          /* dark text on sage */
+}
+
+.data-table caption {
+  font-weight: bold;          /* caption stands out */
+  text-align: left;           /* caption aligns left */
+  margin-bottom: 0.5rem;      /* space under the caption */
+}

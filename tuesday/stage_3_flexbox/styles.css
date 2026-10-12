@@ -1,0 +1,165 @@
+/* ===== Stage 3: Flexbox (nav bar and card row) ===== */
+
+/* ----- Custom properties: named values we reuse (declared once on :root) ----- */
+:root {
+  --terracotta: #B85042;      /* main accent color */
+  --offwhite: #FAF7F2;        /* page background */
+  --sage: #A7BEAE;            /* secondary color */
+  --sand: #E7E8D1;           /* light panel color */
+  --ink: #2B2B2B;             /* body text color, dark for strong contrast */
+  --link: #8A3A2E;            /* darker terracotta for links; meets 4.5:1 contrast on the sand panels */
+}
+
+/* ----- Universal selector: applies to every element ----- */
+* {
+  box-sizing: border-box;     /* width includes padding and border, which makes sizing predictable */
+}
+
+/* ----- Element selector: styles the body tag ----- */
+body {
+  margin: 0;                  /* removes the browser's default 8px margin */
+  font-family: Georgia, "Times New Roman", serif;  /* font stack: first available font is used */
+  font-size: 1.125rem;        /* rem is relative to the root size; 1.125rem is 18px by default */
+  line-height: 1.6;           /* space between lines, as a multiple of the font size */
+  color: var(--ink);          /* text color from the custom property */
+  background-color: var(--offwhite);  /* page background color */
+}
+
+/* ----- Class selector: .site-header matches class="site-header" ----- */
+.site-header {
+  background-color: var(--terracotta);  /* colored band at the top */
+  color: var(--offwhite);     /* text color that contrasts with the band */
+  padding: 2rem 1.5rem;       /* space INSIDE the header: 2rem top/bottom, 1.5rem left/right */
+  text-align: center;         /* centers the inline content (image, text) */
+}
+
+/* ----- Descendant selector: an h1 anywhere inside .site-header ----- */
+.site-header h1 {
+  margin: 0.5rem 0;           /* space OUTSIDE the h1 */
+  font-size: 2.25rem;         /* heading size */
+}
+
+/* ----- Class selector for the logo image ----- */
+.logo {
+  border-radius: 12px;        /* rounds the corners */
+}
+
+/* ----- Navigation bar ----- */
+.site-nav {
+  background-color: var(--sage);  /* nav band color */
+  padding: 0.75rem 1.5rem;    /* space inside the nav */
+}
+
+/* ----- Grouping selector: both rules share one declaration block ----- */
+.site-nav ul,
+.site-nav li {
+  margin: 0;                  /* removes default margins */
+  padding: 0;                 /* removes default padding */
+  list-style: none;           /* removes bullet markers */
+}
+
+/* ----- Flexbox: display:flex turns the ul into a flex container; its li children become flex items ----- */
+.site-nav ul {
+  display: flex;              /* lays the list items out in a row (main axis is horizontal by default) */
+  justify-content: center;    /* centers the items along the main axis */
+  gap: 1.5rem;                /* space between items, without margins on the items */
+}
+
+/* ----- Links: a plain selector, then the :hover pseudo-class ----- */
+a {
+  color: var(--link);         /* link color inside the page content */
+}
+a:hover {
+  text-decoration: none;      /* removes the underline while the pointer is over the link */
+  background-color: var(--sand);  /* highlights the link while hovered */
+}
+.site-nav a {
+  color: var(--ink);          /* nav links use dark text on the sage band */
+  font-weight: bold;          /* makes nav links stand out */
+}
+
+/* ----- Main content area ----- */
+.content {
+  max-width: 48rem;           /* limits line length for readability */
+  margin: 0 auto;             /* top/bottom 0, left/right auto: centers the block horizontally */
+  padding: 1.5rem;            /* space inside main */
+}
+
+/* ----- Box model demo: padding, border, margin on each panel ----- */
+.panel {
+  background-color: var(--sand);       /* panel background */
+  border: 2px solid var(--sage);       /* border: width, style, color */
+  border-radius: 8px;                  /* rounded corners */
+  padding: 1.25rem;                    /* space between border and content */
+  margin-bottom: 1.5rem;               /* space between this panel and the next element */
+}
+
+/* ----- Id selector: #data matches id="data"; ids are more specific than classes ----- */
+#data {
+  border-color: var(--terracotta);     /* overrides .panel's border color for this one section */
+}
+
+/* ----- Table styling ----- */
+.data-table {
+  width: 100%;                         /* table fills the panel width */
+  border-collapse: collapse;           /* merges adjacent cell borders into one line */
+}
+.data-table th,
+.data-table td {
+  padding: 0.5rem 0.75rem;             /* space inside each cell */
+  text-align: right;                   /* numbers line up on the right */
+  border-bottom: 1px solid var(--sage);  /* thin line under each row */
+}
+.data-table th {
+  background-color: var(--sage);       /* header cells get the sage color */
+  color: var(--ink);                   /* dark text on sage */
+}
+.data-table caption {
+  font-weight: bold;                   /* caption stands out */
+  margin-bottom: 0.5rem;               /* space under the caption */
+  text-align: left;                    /* caption aligns left */
+}
+
+/* ----- Aside note ----- */
+.note {
+  border-left: 6px solid var(--terracotta);  /* thick left border as an accent bar */
+  background-color: var(--offwhite);   /* same as the page, so only the bar shows */
+  padding: 0.75rem 1.25rem;            /* space inside the note */
+}
+
+/* ----- Footer ----- */
+.site-footer {
+  background-color: var(--ink);        /* dark band */
+  color: var(--offwhite);              /* light text */
+  padding: 1.5rem;                     /* space inside the footer */
+}
+.site-footer a {
+  color: var(--sand);                  /* footer links need a light color on the dark background */
+}
+
+/* ----- Flexbox: row of cards ----- */
+.card-row {
+  display: flex;              /* the three cards sit side by side */
+  flex-wrap: wrap;            /* cards move to a new line when there is not enough room */
+  gap: 1rem;                  /* space between cards, horizontally and vertically */
+}
+.card {
+  flex: 1 1 12rem;            /* grow: 1, shrink: 1, starting width: 12rem; cards share the row equally */
+  background-color: var(--offwhite);  /* card background */
+  border: 2px solid var(--sage);      /* card border */
+  border-radius: 8px;                 /* rounded corners */
+  padding: 1rem;                      /* space inside the card */
+}
+.card h3 {
+  margin: 0 0 0.25rem 0;      /* removes top margin; keeps a small gap below the city name */
+  color: var(--terracotta);   /* city name in the accent color */
+}
+.card .value {
+  margin: 0;                  /* removes paragraph margins */
+  font-size: 2rem;            /* large number */
+  font-weight: bold;          /* heavy weight for emphasis */
+}
+.card .detail {
+  margin: 0.25rem 0 0 0;      /* small gap above each detail line */
+  font-size: 0.9rem;          /* smaller supporting text */
+}

@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<!-- Modern HTML document -->
+<html lang="en">
+<!-- Root element, English -->
+<head>
+  <!-- Page information -->
+  <meta charset="UTF-8">
+  <!-- Character encoding -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- Scale to the device width -->
+  <title>Florida Housing Explorer: Stage 3 (Events)</title>
+  <!-- Browser tab text -->
+  <link rel="stylesheet" href="styles.css">
+  <!-- Connects the stylesheet -->
+  <script src="data.js" defer></script>
+  <!-- Loads the housing data array first -->
+  <script src="app.js" defer></script>
+  <!-- Loads the app code second; defer runs both after the HTML is parsed, in order -->
+</head>
+<!-- End of head -->
+<body>
+  <!-- Visible content -->
+  <header class="site-header">
+    <!-- Page header -->
+    <h1>Florida Housing Explorer</h1>
+    <!-- Main heading -->
+    <p>Case-Shiller home price index, Miami and Tampa compared with the United States.</p>
+    <!-- Summary sentence -->
+  </header>
+  <!-- End of header -->
+
+  <main class="content">
+    <!-- Main content -->
+    <section class="panel">
+      <!-- Latest values section -->
+      <h2>Latest values</h2>
+      <!-- Section heading -->
+      <p id="latest-label">Loading...</p>
+      <!-- Placeholder text; JavaScript replaces it with the month of the newest row -->
+      <div class="card-row">
+        <!-- Row of three cards -->
+        <article class="card">
+          <!-- Miami card -->
+          <h3>Miami</h3>
+          <!-- City name -->
+          <p class="value" id="latest-miami">-</p>
+          <!-- JavaScript fills in this value -->
+        </article>
+        <!-- End of card -->
+        <article class="card">
+          <!-- Tampa card -->
+          <h3>Tampa</h3>
+          <!-- City name -->
+          <p class="value" id="latest-tampa">-</p>
+          <!-- JavaScript fills in this value -->
+        </article>
+        <!-- End of card -->
+        <article class="card">
+          <!-- National card -->
+          <h3>United States</h3>
+          <!-- Name -->
+          <p class="value" id="latest-national">-</p>
+          <!-- JavaScript fills in this value -->
+        </article>
+        <!-- End of card -->
+      </div>
+      <!-- End of card row -->
+    </section>
+    <!-- End of latest values section -->
+
+    <section class="panel">
+      <!-- Table section -->
+      <h2>Index values</h2>
+      <!-- Section heading -->
+      <div class="controls">
+        <!-- Container for the controls; layout comes from the stylesheet -->
+        <div class="control">
+          <!-- One label and input pair -->
+          <label for="start-year">Start year</label>
+          <!-- Label linked to the input by id -->
+          <input type="number" id="start-year" min="1987" max="2026" value="1987">
+          <!-- Number input; the change event fires when the value is committed -->
+        </div>
+        <!-- End of control -->
+        <div class="control">
+          <!-- One label and input pair -->
+          <label for="end-year">End year</label>
+          <!-- Label linked to the input by id -->
+          <input type="number" id="end-year" min="1987" max="2026" value="2026">
+          <!-- Number input for the last year to show -->
+        </div>
+        <!-- End of control -->
+        <div class="control">
+          <!-- One label and select pair -->
+          <label for="sample">Rows to show</label>
+          <!-- Label linked to the select by id -->
+          <select id="sample">
+            <!-- Dropdown menu -->
+            <option value="june">June of each year</option>
+            <!-- Option 1: one row per year -->
+            <option value="all">Every month</option>
+            <!-- Option 2: all months -->
+          </select>
+          <!-- End of dropdown -->
+        </div>
+        <!-- End of control -->
+        <div class="control">
+          <!-- Holds the sort button -->
+          <button type="button" id="sort-button">Sort: oldest first</button>
+          <!-- type="button" means it does not submit a form; JavaScript handles the click -->
+        </div>
+        <!-- End of control -->
+      </div>
+      <!-- End of controls -->
+      <p id="message" role="status"></p>
+      <!-- Shows a message when the year range is not valid; role="status" lets screen readers announce changes -->
+      <p id="row-count"></p>
+      <!-- JavaScript writes how many rows are shown -->
+      <p id="selected-count">Selected rows: 0</p>
+      <!-- JavaScript writes how many rows the visitor clicked -->
+      <table class="data-table">
+        <!-- Table -->
+        <caption>Case-Shiller home price index (seasonally adjusted)</caption>
+        <!-- Caption -->
+        <thead>
+          <!-- Header row -->
+          <tr>
+            <!-- Row -->
+            <th scope="col">Month</th>
+            <!-- Column heading -->
+            <th scope="col">Miami</th>
+            <!-- Column heading -->
+            <th scope="col">Tampa</th>
+            <!-- Column heading -->
+            <th scope="col">United States</th>
+            <!-- Column heading -->
+          </tr>
+          <!-- End of row -->
+        </thead>
+        <!-- End of header -->
+        <tbody id="table-body">
+          <!-- Body is empty on purpose; JavaScript creates the rows -->
+        </tbody>
+        <!-- End of body -->
+      </table>
+      <!-- End of table -->
+    </section>
+    <!-- End of table section -->
+  </main>
+  <!-- End of main -->
+</body>
+<!-- End of body -->
+</html>
+<!-- End of document -->

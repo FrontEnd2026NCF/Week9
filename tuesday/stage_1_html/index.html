@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<!-- Tells the browser this file is modern HTML (HTML5) -->
+<html lang="en">
+<!-- Root element of the page; lang="en" says the page is in English -->
+<head>
+  <!-- The head holds information ABOUT the page; nothing here is shown in the page body -->
+  <meta charset="UTF-8">
+  <!-- Character encoding so letters and symbols display correctly -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- Makes the page scale to the screen width on phones -->
+  <title>Florida Housing Index Report</title>
+  <!-- Text shown on the browser tab -->
+</head>
+<!-- End of the head -->
+<body>
+  <!-- Everything inside the body is what the visitor sees -->
+
+  <header>
+    <!-- Semantic element: introductory content for the page -->
+    <img src="images/house-icon.svg" alt="Simple house icon" width="80" height="80">
+    <!-- Image; src is a relative path, alt describes the image for screen readers -->
+    <h1>Florida Housing Index Report</h1>
+    <!-- The main heading; use only one h1 per page -->
+    <p>Home price trends in Miami and Tampa compared with the United States, 1987 to 2026.</p>
+    <!-- Paragraph that summarizes the page -->
+  </header>
+  <!-- End of the page header -->
+
+  <nav>
+    <!-- Semantic element: a group of navigation links -->
+    <ul>
+      <!-- Unordered list holding the links -->
+      <li><a href="#about">About the index</a></li>
+      <!-- Link to the element on this page with id="about" -->
+      <li><a href="#data">Data table</a></li>
+      <!-- Link to the element with id="data" -->
+      <li><a href="#sources">Sources</a></li>
+      <!-- Link to the element with id="sources" -->
+    </ul>
+    <!-- End of the list -->
+  </nav>
+  <!-- End of the navigation -->
+
+  <main>
+    <!-- Semantic element: the main content; use only one per page -->
+
+    <section id="about">
+      <!-- A themed group of content; the id lets links jump here -->
+      <h2>About the index</h2>
+      <!-- Second-level heading for this section -->
+      <p>
+        <!-- Paragraph with some words marked up inline -->
+        The <strong>Case-Shiller index</strong> tracks home prices over time.
+        <!-- strong marks text with strong importance (bold by default) -->
+        It is an index, not a dollar price. The value was set to about 100 in January 2000.
+        <!-- Plain sentence explaining what an index is -->
+      </p>
+      <!-- End of paragraph -->
+      <p>
+        <!-- Second paragraph -->
+        An index value of <em>200</em> means prices are about double the January 2000 level.
+        <!-- em marks emphasized text (italic by default) -->
+      </p>
+      <!-- End of paragraph -->
+      <h3>What you can learn from it</h3>
+      <!-- Third-level heading nested under the h2 -->
+      <ul>
+        <!-- Unordered list: order does not matter -->
+        <li>How much prices rose or fell between two dates.</li>
+        <!-- List item -->
+        <li>Whether a city grew faster or slower than the national average.</li>
+        <!-- List item -->
+        <li>When prices peaked and when they bottomed out.</li>
+        <!-- List item -->
+      </ul>
+      <!-- End of list -->
+    </section>
+    <!-- End of the about section -->
+
+    <section id="data">
+      <!-- Section holding the table -->
+      <h2>Index values, June of selected years</h2>
+      <!-- Heading for the table -->
+      <table>
+        <!-- Table element -->
+        <caption>Case-Shiller home price index (seasonally adjusted)</caption>
+        <!-- Caption describes the table for everyone, including screen readers -->
+        <thead>
+          <!-- Table head: the header row -->
+          <tr>
+            <!-- Table row -->
+            <th scope="col">Year</th>
+            <!-- Header cell; scope="col" says it labels a column -->
+            <th scope="col">Miami</th>
+            <!-- Header cell -->
+            <th scope="col">Tampa</th>
+            <!-- Header cell -->
+            <th scope="col">United States</th>
+            <!-- Header cell -->
+          </tr>
+          <!-- End of header row -->
+        </thead>
+        <!-- End of table head -->
+        <tbody>
+          <!-- Table body: the data rows -->
+          <tr><td>2000</td><td>103.406</td><td>104.227</td><td>104.425</td></tr>
+          <!-- Data row: td is a data cell -->
+          <tr><td>2006</td><td>279.209</td><td>237.965</td><td>183.508</td></tr>
+          <!-- Data row -->
+          <tr><td>2012</td><td>145.308</td><td>131.674</td><td>141.019</td></tr>
+          <!-- Data row -->
+          <tr><td>2018</td><td>235.751</td><td>208.858</td><td>202.162</td></tr>
+          <!-- Data row -->
+          <tr><td>2022</td><td>400.420</td><td>377.138</td><td>304.148</td></tr>
+          <!-- Data row -->
+          <tr><td>2026</td><td>447.519</td><td>369.611</td><td>332.294</td></tr>
+          <!-- Data row -->
+        </tbody>
+        <!-- End of table body -->
+      </table>
+      <!-- End of table -->
+    </section>
+    <!-- End of the data section -->
+
+    <aside>
+      <!-- Semantic element: side information related to the main content -->
+      <h2>How to read the table</h2>
+      <!-- Heading for the aside -->
+      <ol>
+        <!-- Ordered list: the steps happen in order -->
+        <li>Find the city column.</li>
+        <!-- Step 1 -->
+        <li>Find the year row.</li>
+        <!-- Step 2 -->
+        <li>Compare the value with 100, the January 2000 level.</li>
+        <!-- Step 3 -->
+      </ol>
+      <!-- End of ordered list -->
+    </aside>
+    <!-- End of aside -->
+
+  </main>
+  <!-- End of main content -->
+
+  <footer id="sources">
+    <!-- Semantic element: footer for the page; id lets the nav link jump here -->
+    <h2>Sources</h2>
+    <!-- Heading for the footer content -->
+    <p>
+      <!-- Paragraph with links -->
+      Data: <a href="https://github.com/datasets/house-prices-us">datasets/house-prices-us on GitHub</a>,
+      <!-- Absolute link: full URL to another website -->
+      from S&amp;P CoreLogic Case-Shiller indices published through FRED.
+      <!-- &amp; is how HTML writes the & character -->
+    </p>
+    <!-- End of paragraph -->
+    <p>Created for CEN 3352, New College of Florida.</p>
+    <!-- Course credit -->
+  </footer>
+  <!-- End of footer -->
+
+</body>
+<!-- End of body -->
+</html>
+<!-- End of the document -->

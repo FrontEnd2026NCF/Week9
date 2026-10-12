@@ -1,0 +1,9 @@
+/* Starter stylesheet for your interactive personal page */
+
+/* TODO 1: copy your styles from Tuesday's styles.css into this file */
+
+/* TODO 2: add a rule for body.dark-mode that changes background-color and color */
+/* JavaScript adds the class "dark-mode" to the body when the visitor clicks the theme button. */
+/* Check that your dark colors still have a contrast ratio of at least 4.5 to 1. */
+
+/* TODO 3: add a rule for .hidden { display: none; } if you want to hide list items with a class */
